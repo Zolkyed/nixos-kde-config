@@ -2,7 +2,7 @@
 with lib;
 let
   defaultApps = {
-    browser = [ "zen-beta.desktop" ];
+    browser = [ "brave-browser.desktop" ];
     text = [ "kate.desktop" ];
     image = [ "imv-dir.desktop" ];
     audio = [ "mpv.desktop" ];
@@ -12,7 +12,7 @@ let
     pdf = [ "org.gnome.Evince.desktop" ];
     terminal = [ "ghostty.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
-    discord = [ "vesktop.desktop" ];
+    discord = [ "discord.desktop" ];
   };
 
   mimeMap = {

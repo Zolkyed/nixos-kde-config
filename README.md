@@ -63,8 +63,8 @@
 | **Lockscreen**              | [KScreenLocker][KScreenLocker] |
 | **Media Player**            | [mpv][mpv] |
 | **Screenshot Software**     | [Spectacle][Spectacle] |
-| **Browser**                 | [Zen Browser][Zen Browser] |
-| **Chat**                    | [Vesktop][Vesktop] |
+| **Browser**                 | [Brave Browser][Brave Browser] |
+| **Chat**                    | [Discord][Discord] |
 
 
 
@@ -225,7 +225,7 @@ After rebooting, you should be greeted by the KDE Plasma desktop environment wit
 - Custom window rules for specific applications
 
 ### Home Manager Modules
-- **Browser**: Zen Browser with custom configuration
+- **Browser**: Brave Browser
 - **Terminal**: Konsole with custom settings
 - **Development**: VSCode, Neovim, and development tools
 - **Multimedia**: Media players and audio tools
@@ -277,4 +277,3 @@ This configuration is inspired by and based on the following sources:
 [KScreenLocker]: https://userbase.kde.org/KScreenLocker
 [mpv]: https://mpv.io/
 [Spectacle]: https://apps.kde.org/spectacle/
-[Vesktop]: https://github.com/Vencord/Vesktop

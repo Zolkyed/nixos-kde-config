@@ -65,11 +65,7 @@
           {
             iconTasks = {
               launchers = [
-                "applications:zen-beta.desktop"
-                "applications:vesktop.desktop"
-                "applications:org.kde.dolphin.desktop"
-                "applications:org.kde.konsole.desktop"
-                # "applications:pcsx2.desktop"
+              "applications:brave-browser.desktop"
               ];
               behavior.showTasks = {
                 onlyInCurrentActivity = false;
