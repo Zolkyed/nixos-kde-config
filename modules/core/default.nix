@@ -18,7 +18,6 @@
     ./flatpak.nix
     ./user.nix
     ./sched-ext.nix
-    ./opentabletdriver.nix
     ./wayland.nix
     ./virtualization.nix
     ./zram.nix

@@ -1,5 +1,5 @@
 {
-  description = "thuanc177's NixOS Flake configuration";
+  description = "Zolkyed's NixOS Flake configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -35,38 +35,33 @@
       ...
     }@inputs:
     let
-      username = "thuanc177";
+      username = "Zolkyed";
       system = "x86_64-linux";
-      githubUsername = "AtelierMizumi";
-      githubEmail = "thuanc177@gmail.com";
-      host = "laptop"; # Change this to "desktop" if you want to use the desktop configuration
+      githubUsername = "Zolkyed";
+      githubEmail = "zolkyed@gmail.com";
+      commonArgs = {
+        inherit
+          self
+          inputs
+          username
+          system
+          githubUsername
+          githubEmail
+          ;
+      };
     in
     {
       nixosConfigurations = {
-        #   desktop = nixpkgs.lib.nixosSystem {
-        #     inherit system;
-        #     modules = [ ./hosts/desktop ];
-        #     specialArgs = {
-        #       host = "nixos";
-        #       inherit self inputs username;
-        #     };
-        #   };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            ./hosts/${host}
-          ];
-          specialArgs = {
-            host = "nixos";
-            inherit
-              self
-              inputs
-              username
-              system
-              githubUsername
-              githubEmail
-              ;
-          };
+          modules = [ ./hosts/laptop ];
+          specialArgs = commonArgs // { host = "laptop"; };
+        };
+
+        desktop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/desktop ];
+          specialArgs = commonArgs // { host = "desktop"; };
         };
       };
     };

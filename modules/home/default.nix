@@ -20,7 +20,6 @@
     ./nix-search/nix-search.nix # TUI to search nixpkgs
     ./nvim.nix # neovim configuration
     ./packages # other packages
-    ./osu.nix # osu! lazer
     # ./proton-vpn.nix # protonvpn gui
     ./qt-creator.nix # qt creator
     ./plasma-manager.nix

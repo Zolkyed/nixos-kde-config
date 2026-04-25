@@ -184,9 +184,16 @@ cd nixos-kde-config
 
 #### 3. **Update hardware configuration**
 
-Copy your hardware configuration:
+Copy the generated hardware configuration to each system profile:
+
+**Laptop:**
 ```bash
 sudo cp /etc/nixos/hardware-configuration.nix hosts/laptop/hardware-configuration.nix
+```
+
+**Desktop:**
+```bash
+sudo cp /etc/nixos/hardware-configuration.nix hosts/desktop/hardware-configuration.nix
 ```
 
 > [!NOTE]
@@ -235,11 +242,15 @@ After rebooting, you should be greeted by the KDE Plasma desktop environment wit
 
 This configuration is inspired by and based on the following sources:
 
-- [Frost-Phoenix/nixos-config](https://github.com/Frost-Phoenix/nixos-config): Main inspiration for structure and styling
-- [Nixos-KDE-config](https://github.com/AtelierMizumi/nixos-kde-config/tree/main): Fork
-- [linuxmobile/shin](https://github.com/linuxmobile/shin/tree/hjem)
-- [tuxdotrs/nix-config](https://github.com/tuxdotrs/nix-config/tree/main)
-- [nix-community/plasma-manager](https://github.com/nix-community/plasma-manager): KDE Plasma configuration management
+- [Frost-Phoenix/nixos-config](https://github.com/Frost-Phoenix/nixos-config) — Primary inspiration for overall structure, organization, and styling
+- [Nixos-KDE-config](https://github.com/AtelierMizumi/nixos-kde-config/tree/main) — Base configuration and initial fork
+- [linuxmobile/shin](https://github.com/linuxmobile/shin/tree/hjem) — Ideas for Home Manager integration and user environment setup
+- [tuxdotrs/nix-config](https://github.com/tuxdotrs/nix-config/tree/main) — System structure patterns and configuration approaches
+- [keenanweaver/nix-config](https://github.com/keenanweaver/nix-config/tree/main) — Additional configuration patterns and design ideas
+
+## 🎨 Tools, Themes & Ecosystem
+
+- [nix-community/plasma-manager](https://github.com/nix-community/plasma-manager) — KDE Plasma configuration management for NixOSmanagement
 - [NixOS Community](https://nixos.org/): For the amazing NixOS ecosystem
 - [Catppuccin Mocha color theme](https://catppuccin.com/palette/): A dark theme with high contrast, used in my VSCode configuration
 - [Catppuccin Wallpapers submodule](https://github.com/zhichaoh/catppuccin-wallpaper): Collection of Catppuccin themed wallpapers.

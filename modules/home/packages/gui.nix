@@ -8,8 +8,6 @@
     ## Office
     libreoffice
 
-    # Stress test GPU
-    unigine-heaven
 
     thunderbird-bin
 
