@@ -14,23 +14,14 @@
     # mouse setup
     piper
 
-    ## Minecraft
-    prismlauncher
-    # atlauncher
-    # multimc
-
     ## Celeste
     # celeste-classic
     # celeste-classic-pm
 
-    ## Doom
-    # gzdoom
-    # crispy-doom
-
     ## Emulation
     # sameboy
     # snes9x
-    ## yuzu
+    # yuzu
     # dolphin-emu
     pcsx2
     retroarch-free

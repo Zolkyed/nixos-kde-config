@@ -2,8 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./../../modules/core
-    ./../../modules/core/nvidia.nix
+    ./../../modules
   ];
 
   time.timeZone = "America/Toronto";
