@@ -7,14 +7,23 @@
       systemd-boot.configurationLimit = 10;
     };
     initrd.systemd.enable = true;
+    initrd.verbose = false;
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "hid-nintendo" ];
     supportedFilesystems = [ "ntfs" ];
-    kernelParams = [ "quiet" "systemd.show_status=auto" "rd.udev.log_level=3" "plymouth.use-simpledrm" ];
-    consoleLogLevel = 3;
+    consoleLogLevel = 0;
+    kernelParams = [
+      "quiet"
+      "loglevel=0"
+      "systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "vt.global_cursor_default=0"
+      "plymouth.use-simpledrm"
+      "splash"
+    ];
     plymouth = {
       enable = true;
-      theme = "spinner";
+      theme = "bgrt";
     };
     tmp = {
       useTmpfs = true;
