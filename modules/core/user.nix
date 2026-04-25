@@ -60,6 +60,7 @@
       "mlocate"
     ];
     shell = pkgs.fish;
+    initialPasswd = "password";
   };
   nix.settings.allowed-users = [ "${username}" ];
 }
