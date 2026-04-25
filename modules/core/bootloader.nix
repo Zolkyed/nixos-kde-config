@@ -8,7 +8,6 @@
     };
     initrd.systemd.enable = true;
     initrd.verbose = false;
-    kernelModules = [ "hid-nintendo" ];
     supportedFilesystems = [ "ntfs" ];
     consoleLogLevel = 0;
     kernelParams = [
@@ -22,7 +21,11 @@
     ];
     plymouth = {
       enable = true;
-      theme = "bgrt";
+      theme = "deus_ex";
+      logo = "${pkgs.nixos-icons}/share/icons/hicolor/64x64/apps/nix-snowflake.png";
+      themePackages = [
+        (pkgs.adi1090x-plymouth-themes.override { selected_themes = [ "deus_ex" ]; })
+      ];
     };
     tmp = {
       useTmpfs = true;
@@ -30,3 +33,4 @@
     };
   };
 }
+```
