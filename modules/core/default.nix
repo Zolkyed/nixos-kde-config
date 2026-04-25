@@ -2,24 +2,24 @@
 {
   imports = [
     ./appimage.nix
-    ./bootloader.nix
     ./bluetooth.nix
+    ./bootloader.nix
     ./cloudflare-warp.nix
+    ./flatpak.nix
+    ./kde.nix
+    ./mouse.nix
     ./network.nix
     ./nh.nix
-    ./kde.nix
+    ./nvidia.nix
     ./pipewire.nix
     ./program.nix
+    ./sched-ext.nix
     ./security.nix
-#   ./nvidia.nix # Imported from desktop
-    ./mouse.nix
     ./steam.nix
     ./system.nix
-    ./flatpak.nix
     ./user.nix
-    ./sched-ext.nix
-    ./wayland.nix
     ./virtualization.nix
+    ./wayland.nix
     ./zram.nix
   ];
 }
