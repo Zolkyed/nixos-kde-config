@@ -29,7 +29,7 @@
    <img src="./assets/screenshots/desktop.png" style="margin-bottom: 15px;"/> <br>
    <img src="./assets/screenshots/coding.png" style="margin-bottom: 15px;"/> <br>
    <img src="./assets/screenshots/overview.png" style="margin-bottom: 15px;"/> <br>
-   Screenshots last updated <b>2025-07-04</b>
+   Screenshots last updated <b>2026-04-25</b>
 </p>
 
 # 🗃️ Overview
