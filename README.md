@@ -9,13 +9,13 @@
         </p>
     </div>
        <div align="center">
-        <a href="https://github.com/AtelierMizumi/nixos-kde-config/">
-                    <img src="https://img.shields.io/github/repo-size/AtelierMizumi/nixos-kde-config?color=f38ba8&labelColor=1e1e2e&style=for-the-badge&logo=github&logoColor=f38ba8">
+        <a href="https://github.com/Zolkyed/nixos-kde-config/">
+                    <img src="https://img.shields.io/github/repo-size/Zolkyed/nixos-kde-config?color=f38ba8&labelColor=1e1e2e&style=for-the-badge&logo=github&logoColor=f38ba8">
                  </a>
                  <a href="https://nixos.org">
                     <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=1e1e2e&logo=NixOS&logoColor=89b4fa&color=89b4fa">
                  </a>
-                 <a href="https://github.com/AtelierMizumi/nixos-kde-config/blob/main/LICENSE">
+                 <a href="https://github.com/Zolkyed/nixos-kde-config/blob/main/LICENSE">
                     <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=1e1e2e&colorB=a6e3a1&logo=unlicense&logoColor=a6e3a1&"/>
                  </a>
        </div>
