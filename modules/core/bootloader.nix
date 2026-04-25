@@ -1,31 +1,24 @@
 { pkgs, ... }:
 {
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.systemd-boot.configurationLimit = 10;
-  # boot.supportedFilesystems = [ "ntfs" ];
-
-  boot.loader = {
-    # Just want to remind myself that I need this line
-    # for the bootloader to be detected
-    efi.canTouchEfiVariables = true;
-    grub = {
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      systemd-boot.configurationLimit = 10;
+    };
+    initrd.systemd.enable = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = [ "hid-nintendo" ];
+    supportedFilesystems = [ "ntfs" ];
+    kernelParams = [ "quiet" "systemd.show_status=auto" "rd.udev.log_level=3" "plymouth.use-simpledrm" ];
+    consoleLogLevel = 3;
+    plymouth = {
       enable = true;
-      useOSProber = true;
-      copyKernels = true;
-      # Actually make Grub a separate boot entry and not an option in systemd-boot
-      efiInstallAsRemovable = false;
-      efiSupport = true;
-      fsIdentifier = "label";
-      devices = [ "nodev" ];
-      extraEntries = ''
-        menuentry "Reboot" {
-          reboot
-        }
-        menuentry "Poweroff" {
-          halt
-        }
-      '';
+      theme = "spinner";
+    };
+    tmp = {
+      useTmpfs = true;
+      cleanOnBoot = true;
     };
   };
 }
