@@ -11,7 +11,7 @@
     ./pipewire.nix
     ./program.nix
     ./security.nix
-    ./nvidia.nix
+#   ./nvidia.nix # Imported from desktop
     ./mouse.nix
     ./steam.nix
     ./system.nix
