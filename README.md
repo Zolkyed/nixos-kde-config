@@ -95,6 +95,42 @@ NixOS (EXPAND)
 
 </details>
 
+## 🧰 Commands
+
+<details>
+<summary>
+Flake (EXPAND)
+</summary>
+
+- ```nix flake init```    $\rightarrow$ Initialize a new flake
+- ```nix flake update```  $\rightarrow$ Update all flake inputs
+- ```nix flake show```    $\rightarrow$ Show flake outputs
+
+</details>
+
+<details>
+<summary>
+NixOS Rebuild (EXPAND)
+</summary>
+
+- ```nixos-rebuild build --flake .#host```   $\rightarrow$ Build configuration without activating
+- ```nixos-rebuild test --flake .#host```    $\rightarrow$ Test configuration (reverts on reboot)
+- ```nixos-rebuild switch --flake .#host```  $\rightarrow$ Build and activate configuration
+- ```nixos-rebuild switch --rollback```      $\rightarrow$ Rollback to previous generation
+
+</details>
+
+<details>
+<summary>
+Hardware Config (EXPAND)
+</summary>
+
+Run ```nixos-generate-config``` to generate hardware configuration files:
+- ```/etc/nixos/hardware-configuration.nix```  $\rightarrow$ Copy to ```hosts/<hostname>/```
+- ```/etc/nixos/configuration.nix```           $\rightarrow$ Ignore (not used in flakes)
+
+</details>
+
 ## ⌨️ Keybinds
 
 ### KDE Plasma Shortcuts
@@ -200,6 +236,9 @@ After rebooting, you should be greeted by the KDE Plasma desktop environment wit
 This configuration is inspired by and based on the following sources:
 
 - [Frost-Phoenix/nixos-config](https://github.com/Frost-Phoenix/nixos-config): Main inspiration for structure and styling
+- [Nixos-KDE-config](https://github.com/AtelierMizumi/nixos-kde-config/tree/main): Fork
+- [linuxmobile/shin](https://github.com/linuxmobile/shin/tree/hjem)
+- [tuxdotrs/nix-config](https://github.com/tuxdotrs/nix-config/tree/main)
 - [nix-community/plasma-manager](https://github.com/nix-community/plasma-manager): KDE Plasma configuration management
 - [NixOS Community](https://nixos.org/): For the amazing NixOS ecosystem
 - [Catppuccin Mocha color theme](https://catppuccin.com/palette/): A dark theme with high contrast, used in my VSCode configuration
