@@ -51,10 +51,6 @@
     cmatrix
     fortune
 
-    # iPhone file system access
-    ifuse
-    libimobiledevice
-
     # Command history
     atuin
 
