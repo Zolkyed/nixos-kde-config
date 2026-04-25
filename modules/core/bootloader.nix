@@ -1,44 +1,32 @@
+{ pkgs, ... }:
 {
-  config,
-  pkgs,
-  ...
-}: {
   boot = {
-    bootspec.enable = true;
-
-    initrd = {
-      systemd.enable = true;
-    };
-    supportedFilesystems = ["ntfs"];
-
-    # use latest kernel
-    kernelPackages = pkgs.linuxPackages_latest;
-
-    consoleLogLevel = 3;
-    kernelParams = [
-      "quiet"
-      "systemd.show_status=auto"
-      "rd.udev.log_level=3"
-      "plymouth.use-simpledrm"
-    ];
-
     loader = {
-      # systemd-boot on UEFI
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      systemd-boot.configurationLimit = 10;
     };
-
-    plymouth.enable = true;
-
+    initrd.systemd.enable = true;
+    initrd.verbose = false;
+    kernelModules = [ "hid-nintendo" ];
+    supportedFilesystems = [ "ntfs" ];
+    consoleLogLevel = 0;
+    kernelParams = [
+      "quiet"
+      "loglevel=0"
+      "systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "vt.global_cursor_default=0"
+      "plymouth.use-simpledrm"
+      "splash"
+    ];
+    plymouth = {
+      enable = true;
+      theme = "bgrt";
+    };
     tmp = {
       useTmpfs = true;
       cleanOnBoot = true;
     };
   };
-  systemd.services.nix-daemon = {
-    environment = {
-      TMPDIR = "/var/tmp";
-    };
-  };
-  environment.systemPackages = [config.boot.kernelPackages.cpupower];
 }
