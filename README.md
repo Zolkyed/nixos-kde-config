@@ -178,7 +178,7 @@ First install NixOS using any [graphical ISO image](https://nixos.org/download.h
 
 ```bash
 nix-shell -p git
-git clone https://github.com/AtelierMizumi/nixos-kde-config
+git clone https://github.com/Zolkyed/nixos-kde-config.git
 cd nixos-kde-config
 ```
 
