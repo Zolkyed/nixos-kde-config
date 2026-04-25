@@ -277,5 +277,4 @@ This configuration is inspired by and based on the following sources:
 [KScreenLocker]: https://userbase.kde.org/KScreenLocker
 [mpv]: https://mpv.io/
 [Spectacle]: https://apps.kde.org/spectacle/
-[Zen Browser]: https://zen-browser.app/
 [Vesktop]: https://github.com/Vencord/Vesktop
