@@ -8,6 +8,7 @@
     ./network.nix
     ./nh.nix
     ./kde.nix
+    ./login.nix
     ./pipewire.nix
     ./program.nix
     ./security.nix
