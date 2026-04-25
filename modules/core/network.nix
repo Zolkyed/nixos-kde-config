@@ -4,9 +4,9 @@
     hostName = "${host}";
     networkmanager.enable = true;
     nameservers = [
-      "8.8.8.8"
-      "8.8.4.4"
       "1.1.1.1"
+      "1.0.0.1"
+      "8.8.8.8"
     ];
     firewall = {
       enable = true;
@@ -14,7 +14,6 @@
         22
         80
         443
-        # 25565
       ];
       allowedUDPPorts = [
         # 19132

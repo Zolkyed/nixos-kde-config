@@ -8,9 +8,10 @@
       accelProfile = "flat";
     };
 
-    ## disabling touchpad acceleration
-    # touchpad = {
-    #   accelProfile = "flat";
-    # };
+    # disabling touchpad acceleration
+    touchpad = {
+      accelProfile = "flat";
+      naturalScrolling = true;
+    };
   };
 }
