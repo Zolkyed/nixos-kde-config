@@ -14,6 +14,10 @@
     ## Python
     python3
 
+    ## Docker
+    docker
+    docker-buildx
+
     # Windows partition support
     ntfs3g
 

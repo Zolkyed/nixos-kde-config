@@ -54,9 +54,6 @@
     # Command history
     atuin
 
-    ## Multimedia
-    ani-cli
-
     ## Utilities
     yt-dlp-light
     ffmpeg

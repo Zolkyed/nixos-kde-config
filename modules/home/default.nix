@@ -1,12 +1,7 @@
 { ... }:
 {
   imports = [
-    ./android-studio.nix # android studio
-    ./browser.nix # Brave based browser
     ./cava.nix # audio visualizer
-    ./davinci-resolve.nix # video editing
-    ./discord.nix # discord
-    ./docker.nix # docker configuration
     ./fastfetch.nix # fetch tool
     ./fonts.nix # fonts settings
     ./gaming.nix # packages related to gaming

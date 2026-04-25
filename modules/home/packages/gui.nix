@@ -5,6 +5,17 @@
     gimp
     pavucontrol
 
+    ## Communication
+    discord
+
+    ## Browser
+    brave
+
+    ## Video Editing, DaVinci Resolve Free Edition
+    davinci-resolve
+    openshot-qt
+    flowblade
+
     ## Office
     libreoffice
 
