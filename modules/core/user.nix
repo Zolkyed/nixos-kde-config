@@ -1,41 +1,9 @@
 {
   pkgs,
-  inputs,
   username,
-  host,
-  githubEmail,
-  githubUsername,
   ...
 }:
 {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
-  home-manager = {
-    backupFileExtension = "backup";
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
-    extraSpecialArgs = {
-      inherit
-        inputs
-        username
-        host
-        githubEmail
-        githubUsername
-        ;
-    };
-    users.${username} = {
-      imports = [
-        ./../home/default.nix
-      ];
-      home.username = "${username}";
-      home.homeDirectory = "/home/${username}";
-      # home.stateVersion = "25.11";
-      programs.home-manager.enable = true;
-    };
-  };
-
   programs.fish.enable = true;
 
   environment.shellAliases = {
@@ -62,5 +30,6 @@
     shell = pkgs.fish;
     initialPassword = "password";
   };
+
   nix.settings.allowed-users = [ "${username}" ];
 }

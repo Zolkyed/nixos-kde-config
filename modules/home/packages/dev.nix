@@ -1,27 +1,29 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
-  home.packages = with pkgs; [
-    ## Lsp
-    nixd # nix
+  home-manager.users.${username} = {
+    home.packages = with pkgs; [
+      ## Lsp
+      nixd # nix
 
-    ## C / C++
-    gcc
-    gdb
-    cmake
+      ## C / C++
+      gcc
+      gdb
+      cmake
 
-    ncurses
+      ncurses
 
-    ## Python
-    python3
+      ## Python
+      python3
 
-    ## Docker
-    docker
-    docker-buildx
+      ## Docker
+      docker
+      docker-buildx
 
-    # Windows partition support
-    ntfs3g
+      # Windows partition support
+      ntfs3g
 
-    appimage-run
-    power-profiles-daemon
-  ];
+      appimage-run
+      power-profiles-daemon
+    ];
+  };
 }

@@ -1,43 +1,44 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
-  home.packages = with pkgs; [
-    ## Multimedia
-    gimp
-    pavucontrol
+  home-manager.users.${username} = {
+    home.packages = with pkgs; [
+      ## Multimedia
+      gimp
+      pavucontrol
 
-    ## Communication
-    discord
+      ## Communication
+      discord
 
-    ## Browser
-    brave
+      ## Browser
+      brave
 
-    ## Video Editing, DaVinci Resolve Free Edition
-    davinci-resolve
-    openshot-qt
-    flowblade
+      ## Video Editing, DaVinci Resolve Free Edition
+      davinci-resolve
+      openshot-qt
+      flowblade
 
-    ## Office
-    libreoffice
+      ## Office
+      libreoffice
 
+      thunderbird-bin
 
-    thunderbird-bin
+      ## Utility
+      dconf-editor
+      mission-center
+      gparted
+      qbittorrent
 
-    ## Utility
-    dconf-editor
-    mission-center # GUI resources monitor
-    gparted
-    qbittorrent
-
-    # translation
-    dialect
-  ];
-
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
+      # translation
+      dialect
     ];
+
+    programs.obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+      ];
+    };
   };
 }

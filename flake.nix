@@ -52,13 +52,61 @@
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/laptop ];
+          modules = with inputs; [
+            ./hosts/laptop
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                backupFileExtension = "backup";
+                useUserPackages = true;
+                useGlobalPkgs = true;
+                sharedModules = [
+                  plasma-manager.homeManagerModules.plasma-manager
+                ];
+                extraSpecialArgs = {
+                  inherit
+                    inputs
+                    username
+                    githubEmail
+                    githubUsername
+                    ;
+                  host = "laptop";
+                };
+                users.${username} = { };
+              };
+            }
+          ];
           specialArgs = commonArgs // { host = "laptop"; };
         };
 
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/desktop ];
+          modules = with inputs; [
+            ./hosts/desktop
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                backupFileExtension = "backup";
+                useUserPackages = true;
+                useGlobalPkgs = true;
+                sharedModules = [
+                  plasma-manager.homeManagerModules.plasma-manager
+                  nixcord.homeManagerModules.nixcord
+                  nix-flatpak.homeManagerModules.nix-flatpak
+                ];
+                extraSpecialArgs = {
+                  inherit
+                    inputs
+                    username
+                    githubEmail
+                    githubUsername
+                    ;
+                  host = "desktop";
+                };
+                users.${username} = { };
+              };
+            }
+          ];
           specialArgs = commonArgs // { host = "desktop"; };
         };
       };
