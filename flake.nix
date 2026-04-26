@@ -62,6 +62,8 @@
                 useGlobalPkgs = true;
                 sharedModules = [
                   plasma-manager.homeManagerModules.plasma-manager
+                  nixcord.homeManagerModules.nixcord
+                  nix-flatpak.homeManagerModules.nix-flatpak
                 ];
                 extraSpecialArgs = {
                   inherit
