@@ -1,10 +1,12 @@
-{ pkgs, inputs, ... }:
+{ pkgs, username, ... }:
 {
-  fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [
-    nerd-fonts.noto
-    noto-fonts-cjk-serif
-    noto-fonts-cjk-sans
-    texlivePackages.symbol
-  ];
+  home-manager.users.${username} = {
+    fonts.fontconfig.enable = true;
+    home.packages = with pkgs; [
+      nerd-fonts.noto
+      noto-fonts-cjk-serif
+      noto-fonts-cjk-sans
+      texlivePackages.symbol
+    ];
+  };
 }
