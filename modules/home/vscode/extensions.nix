@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 # let
 #   jonathanharty.gruvbox-material-icon-theme =
 #     pkgs.vscode-utils.buildVscodeMarketplaceExtension
@@ -12,28 +12,30 @@
 #       };
 # in
 {
-  programs.vscode.profiles.default = {
-    extensions = with pkgs.vscode-extensions; [
-      ## Languages
-      jnoortheen.nix-ide
-      arrterian.nix-env-selector
-      github.copilot
-      github.copilot-chat
-      github.vscode-pull-request-github
-      rust-lang.rust-analyzer
-      # ms-python.python
-      llvm-vs-code-extensions.vscode-clangd
-      # ziglang.vscode-zig
-      tamasfe.even-better-toml
-      golang.go
-      ms-vscode.cmake-tools
+  home-manager.users.${username} = {
+    programs.vscode.profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        ## Languages
+        jnoortheen.nix-ide
+        arrterian.nix-env-selector
+        github.copilot
+        github.copilot-chat
+        github.vscode-pull-request-github
+        rust-lang.rust-analyzer
+        # ms-python.python
+        llvm-vs-code-extensions.vscode-clangd
+        # ziglang.vscode-zig
+        tamasfe.even-better-toml
+        golang.go
+        ms-vscode.cmake-tools
 
-      ## Color scheme
-      catppuccin.catppuccin-vsc-icons
-      catppuccin.catppuccin-vsc
-      llvm-vs-code-extensions.vscode-clangd
-      # jdinhlife.gruvbox
-      # jonathanharty.gruvbox-material-icon-theme
-    ];
+        ## Color scheme
+        catppuccin.catppuccin-vsc-icons
+        catppuccin.catppuccin-vsc
+        llvm-vs-code-extensions.vscode-clangd
+        # jdinhlife.gruvbox
+        # jonathanharty.gruvbox-material-icon-theme
+      ];
+    };
   };
 }

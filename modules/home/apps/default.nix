@@ -5,7 +5,8 @@
     ./fastfetch.nix   
     ./fonts.nix      
     ./git.nix       
-    ./gtk.nix        
+    ./gtk.nix
+    ./home-manager.nix        
     ./notion.nix     
     ./nvim.nix      
     ./qt-creator.nix 

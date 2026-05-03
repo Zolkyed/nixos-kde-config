@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, username, ... }:
 with lib;
 let
   defaultApps = {
@@ -95,21 +95,23 @@ let
     );
 in
 {
-  xdg.configFile."mimeapps.list".force = true;
-  xdg.mimeApps.enable = true;
-  xdg.mimeApps.associations.added = associations;
-  xdg.mimeApps.defaultApplications = associations;
+  home-manager.users.${username} = {
+    xdg.configFile."mimeapps.list".force = true;
+    xdg.mimeApps.enable = true;
+    xdg.mimeApps.associations.added = associations;
+    xdg.mimeApps.defaultApplications = associations;
 
-  home.sessionVariables = {
-    # prevent wine from creating file associations
-    WINEDLLOVERRIDES = "winemenubuilder.exe=d";
-    # optimizations
-    # Wine optimizations
-    DXVK_ASYNC = "1";
-    WINE_FULLSCREEN_FSR = "1";
-    WINE_LARGE_ADDRESS_AWARE = "1";
-    vblank_mode = "0";
-    __GL_THREADED_OPTIMIZATIONS = "1";
-    mesa_glthread = "true";
+    home.sessionVariables = {
+      # prevent wine from creating file associations
+      WINEDLLOVERRIDES = "winemenubuilder.exe=d";
+      # optimizations
+      # Wine optimizations
+      DXVK_ASYNC = "1";
+      WINE_FULLSCREEN_FSR = "1";
+      WINE_LARGE_ADDRESS_AWARE = "1";
+      vblank_mode = "0";
+      __GL_THREADED_OPTIMIZATIONS = "1";
+      mesa_glthread = "true";
+    };
   };
 }

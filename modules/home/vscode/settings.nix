@@ -1,10 +1,11 @@
-{ ... }:
+{ username, ... }:
 {
-  programs.vscode.profiles.default = {
+  home-manager.users.${username} = {
+    programs.vscode.profiles.default = {
     userSettings = {
       "clangd.path" =
-        "/home/thuanc177/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/20.1.8/clangd_20.1.8/bin/clangd";
-      "qt-core.qtInstallationRoot" = "/home/thuanc177/Documents/Qt";
+        "/home/${username}/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/20.1.8/clangd_20.1.8/bin/clangd";
+      "qt-core.qtInstallationRoot" = "/home/${username}/Documents/Qt";
       "update.mode" = "none";
       "extensions.autoUpdate" = false; # This stuff fixes vscode freaking out when theres an update
       "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
@@ -79,4 +80,5 @@
       "git.enableSmartCommit" = true;
     };
   };
+};
 }

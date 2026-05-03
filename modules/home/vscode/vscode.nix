@@ -1,7 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscode;
+  home-manager.users.${username} = {
+    programs.vscode = {
+      enable = true;
+      package = pkgs.vscode;
+    };
   };
 }

@@ -1,7 +1,9 @@
-{ ... }:
+{ username, ... }:
 {
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
+  home-manager.users.${username} = {
+    programs.neovim = {
+      enable = true;
+      vimAlias = true;
+    };
   };
 }
